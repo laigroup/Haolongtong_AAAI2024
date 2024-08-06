@@ -1,0 +1,811 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.4.5)  6 AUG 2024 09:21
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**main.tex
+(./main.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-02-20>
+(d:/texlive/2024/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
+(d:/texlive/2024/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count188
+\c@section=\count189
+\c@subsection=\count190
+\c@subsubsection=\count191
+\c@paragraph=\count192
+\c@subparagraph=\count193
+\c@figure=\count194
+\c@table=\count195
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
+) (./aaai25.sty
+Package: aaai25 2025/05/08 AAAI 2025 Submission format
+
+Conference Style for AAAI for LaTeX 2e -- version for submission
+\titlebox=\skip50
+) (d:/texlive/2024/texmf-dist/tex/latex/psnfss/times.sty
+Package: times 2020/03/25 PSNFSS-v9.3 (SPQR) 
+)
+(d:/texlive/2024/texmf-dist/tex/latex/psnfss/helvet.sty
+Package: helvet 2020/03/25 PSNFSS-v9.3 (WaS) 
+
+(d:/texlive/2024/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+))
+(d:/texlive/2024/texmf-dist/tex/latex/psnfss/courier.sty
+Package: courier 2020/03/25 PSNFSS-v9.3 (WaS) 
+)
+(d:/texlive/2024/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(d:/texlive/2024/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(d:/texlive/2024/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+
+(d:/texlive/2024/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+(d:/texlive/2024/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+
+(d:/texlive/2024/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen141
+\Gin@req@width=\dimen142
+)
+(d:/texlive/2024/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip51
+\bibsep=\skip52
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count196
+)
+(d:/texlive/2024/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+
+(d:/texlive/2024/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen143
+\captionmargin=\dimen144
+\caption@leftmargin=\dimen145
+\caption@rightmargin=\dimen146
+\caption@width=\dimen147
+\caption@indent=\dimen148
+\caption@parindent=\dimen149
+\caption@hangindent=\dimen150
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count197
+\c@continuedfloat=\count198
+)
+(d:/texlive/2024/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2023/05/13 v2.17o AMS math features
+\@mathmargin=\skip53
+
+For additional information on amsmath, use the `?' option.
+(d:/texlive/2024/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(d:/texlive/2024/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks18
+\ex@=\dimen151
+))
+(d:/texlive/2024/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen152
+)
+(d:/texlive/2024/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count199
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count266
+\leftroot@=\count267
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count268
+\DOTSCASE@=\count269
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box51
+\strutbox@=\box52
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen153
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count270
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count271
+\dotsspace@=\muskip17
+\c@parentequation=\count272
+\dspbrk@lvl=\count273
+\tag@help=\toks19
+\row@=\count274
+\column@=\count275
+\maxfields@=\count276
+\andhelp@=\toks20
+\eqnshift@=\dimen154
+\alignsep@=\dimen155
+\tagshift@=\dimen156
+\tagwidth@=\dimen157
+\totwidth@=\dimen158
+\lineht@=\dimen159
+\@envbody=\toks21
+\multlinegap=\skip54
+\multlinetaggap=\skip55
+\mathdisplay@stack=\toks22
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+)
+(d:/texlive/2024/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks23
+\thm@bodyfont=\toks24
+\thm@headfont=\toks25
+\thm@notefont=\toks26
+\thm@headpunct=\toks27
+\thm@preskip=\skip56
+\thm@postskip=\skip57
+\thm@headsep=\skip58
+\dth@everypar=\toks28
+)
+\c@example=\count277
+\c@proposition=\count278
+\c@definition=\count279
+
+(d:/texlive/2024/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
+Package: algorithm2e 2017/07/18 v5.2 algorithms environments
+\c@AlgoLine=\count280
+
+(d:/texlive/2024/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
+)
+\algocf@hangindent=\skip59
+
+(d:/texlive/2024/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
+Package: ifoddpage 2022/10/18 v1.2 Conditionals for odd/even page detection
+\c@checkoddpage=\count281
+)
+(d:/texlive/2024/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+)
+(d:/texlive/2024/texmf-dist/tex/latex/relsize/relsize.sty
+Package: relsize 2013/03/29 ver 4.1
+)
+\skiptotal=\skip60
+\skiplinenumber=\skip61
+\skiprule=\skip62
+\skiphlne=\skip63
+\skiptext=\skip64
+\skiplength=\skip65
+\algomargin=\skip66
+\skipalgocfslide=\skip67
+\algowidth=\dimen160
+\inoutsize=\dimen161
+\inoutindent=\dimen162
+\interspacetitleruled=\dimen163
+\interspacealgoruled=\dimen164
+\interspacetitleboxruled=\dimen165
+\algocf@ruledwidth=\skip68
+\algocf@inoutbox=\box53
+\algocf@inputbox=\box54
+\AlCapSkip=\skip69
+\AlCapHSkip=\skip70
+\algoskipindent=\skip71
+\algocf@nlbox=\box55
+\algocf@hangingbox=\box56
+\algocf@untilbox=\box57
+\algocf@skipuntil=\skip72
+\algocf@capbox=\box58
+\algocf@lcaptionbox=\skip73
+\algoheightruledefault=\skip74
+\algoheightrule=\skip75
+\algotitleheightruledefault=\skip76
+\algotitleheightrule=\skip77
+\c@algocfline=\count282
+\c@algocfproc=\count283
+\c@algocf=\count284
+\algocf@algoframe=\box59
+\algocf@algobox=\box60
+)
+(d:/texlive/2024/texmf-dist/tex/latex/comment/comment.sty
+\CommentStream=\write3
+
+Excluding comment 'comment')
+(d:/texlive/2024/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen166
+\lightrulewidth=\dimen167
+\cmidrulewidth=\dimen168
+\belowrulesep=\dimen169
+\belowbottomsep=\dimen170
+\aboverulesep=\dimen171
+\abovetopsep=\dimen172
+\cmidrulesep=\dimen173
+\cmidrulekern=\dimen174
+\defaultaddspace=\dimen175
+\@cmidla=\count285
+\@cmidlb=\count286
+\@aboverulesep=\dimen176
+\@belowrulesep=\dimen177
+\@thisruleclass=\count287
+\@lastruleclass=\count288
+\@thisrulewidth=\dimen178
+)
+(d:/texlive/2024/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
+\multirow@colwidth=\skip78
+\multirow@cntb=\count289
+\multirow@dima=\skip79
+\bigstrutjot=\dimen179
+)
+(d:/texlive/2024/texmf-dist/tex/latex/newfloat/newfloat.sty
+Package: newfloat 2023/10/01 v1.2 Defining new floating environments (AR)
+)
+(d:/texlive/2024/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count290
+\lst@gtempboxa=\box61
+\lst@token=\toks29
+\lst@length=\count291
+\lst@currlwidth=\dimen180
+\lst@column=\count292
+\lst@pos=\count293
+\lst@lostspace=\dimen181
+\lst@width=\dimen182
+\lst@newlines=\count294
+\lst@lineno=\count295
+\lst@maxwidth=\dimen183
+
+(d:/texlive/2024/texmf-dist/tex/latex/listings/lstpatch.sty
+File: lstpatch.sty 2024/02/21 1.10 (Carsten Heinz)
+)
+(d:/texlive/2024/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2024/02/21 1.10 (Carsten Heinz)
+\c@lstnumber=\count296
+\lst@skipnumbers=\count297
+\lst@framebox=\box62
+)
+(d:/texlive/2024/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2024/02/21 1.10 listings configuration
+))
+Package: listings 2024/02/21 1.10 (Carsten Heinz)
+
+(d:/texlive/2024/texmf-dist/tex/latex/natbib/bibentry.sty
+Package: bibentry 2007/10/30 1.5 (PWD)
+)
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 1
+76.
+
+(d:/texlive/2024/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+(d:/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count298
+\l__pdf_internal_box=\box63
+)
+(./main.aux)
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+ (d:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count299
+\scratchdimen=\dimen184
+\scratchbox=\box64
+\nofMPsegments=\count300
+\nofMParguments=\count301
+\everyMPshowfont=\toks30
+\MPscratchCnt=\count302
+\MPscratchDim=\dimen185
+\MPnumerator=\count303
+\makeMPintoPDFobject=\count304
+\everyMPtoPDFconversion=\toks31
+) (d:/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(d:/texlive/2024/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: listings package is loaded.
+Package caption Info: End \AtBeginDocument code.
+\c@lstlisting=\count305
+
+(./Sections/1-Introduction.tex
+
+Package natbib Warning: Citation `denning1982cryptography' on page 1 undefined 
+on input line 4.
+
+
+Package natbib Warning: Citation `gray1992toward' on page 1 undefined on input 
+line 4.
+
+
+Package natbib Warning: Citation `backes2009automatic' on page 1 undefined on i
+nput line 5.
+
+
+Package natbib Warning: Citation `cerny2011complexity' on page 1 undefined on i
+nput line 5.
+
+
+Package natbib Warning: Citation `phan2012symbolic' on page 1 undefined on inpu
+t line 5.
+
+
+Package natbib Warning: Citation `smith2009foundations' on page 1 undefined on 
+input line 5.
+
+
+Package natbib Warning: Citation `backes2009automatic' on page 1 undefined on i
+nput line 6.
+
+
+Package natbib Warning: Citation `meng2011calculating' on page 1 undefined on i
+nput line 6.
+
+
+Package natbib Warning: Citation `phan2012symbolic' on page 1 undefined on inpu
+t line 6.
+
+
+Package natbib Warning: Citation `smith2009foundations' on page 1 undefined on 
+input line 6.
+
+
+Package natbib Warning: Citation `fremont2017maximum' on page 1 undefined on in
+put line 8.
+
+
+Package natbib Warning: Citation `golia2022scalable' on page 1 undefined on inp
+ut line 8.
+
+
+Underfull \hbox (badness 1484) in paragraph at lines 4--10
+\OT1/ptm/m/n/10 In QIF, we of-ten quan-tify the leak-age us-ing entropy-
+ []
+
+
+Package natbib Warning: Citation `backes2011non' on page 1 undefined on input l
+ine 17.
+
+
+Package natbib Warning: Citation `klebanov2013sat' on page 1 undefined on input
+ line 17.
+
+
+Package natbib Warning: Citation `golia2022scalable' on page 1 undefined on inp
+ut line 20.
+
+
+Package natbib Warning: Citation `golia2022scalable' on page 1 undefined on inp
+ut line 23.
+
+) (./Sections/2-Notations and Background.tex
+Underfull \hbox (badness 1337) in paragraph at lines 6--13
+\OT1/ptm/m/n/10 In this pa-per, we fo-cus on the pro-grams mod-eled by
+ []
+
+[1
+
+
+{d:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{d:/texlive/2024/
+texmf-dist/fonts/enc/dvips/base/8r.enc}]
+
+Package natbib Warning: Citation `golia2022scalable' on page 2 undefined on inp
+ut line 35.
+
+
+Overfull \hbox (113.25119pt too wide) detected at line 46
+[]
+ []
+
+
+Package natbib Warning: Citation `bahar1997algebric' on page 2 undefined on inp
+ut line 75.
+
+
+Package natbib Warning: Citation `bahar1997algebric' on page 2 undefined on inp
+ut line 80.
+
+
+Package natbib Warning: Citation `kwiatkowska2007stochastic' on page 2 undefine
+d on input line 81.
+
+
+Package natbib Warning: Citation `hoey2013spudd' on page 2 undefined on input l
+ine 81.
+
+
+Package natbib Warning: Citation `dudek2020addmc' on page 2 undefined on input 
+line 81.
+
+
+Package natbib Warning: Citation `dudek2020addmc' on page 2 undefined on input 
+line 83.
+
+
+Underfull \hbox (badness 5741) in paragraph at lines 83--86
+[]\OT1/ptm/m/n/10 We con-sider an ADD con-sist-ing of a quadru-ple
+ []
+
+) (./Sections/3-Algebraic Decision Diagram With Implied Literals.tex
+
+Package natbib Warning: Citation `macii1996exact' on page 2 undefined on input 
+line 6.
+
+
+Package natbib Warning: Citation `lai2013reduced' on page 2 undefined on input 
+line 8.
+
+[2]
+Overfull \hbox (57.83037pt too wide) detected at line 37
+\OML/cmm/m/it/10 !\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^[; u\OT1/cmr/m/n/10 ) = [
+]
+ []
+
+
+
+pdfTeX warning: pdflatex.exe (file ./figures/ADD-L-example1.pdf): PDF inclusion
+: found PDF version <1.7>, but at most version <1.5> allowed
+<figures/ADD-L-example1.pdf, id=24, 844.95674pt x 597.432pt>
+File: figures/ADD-L-example1.pdf Graphic file (type pdf)
+<use figures/ADD-L-example1.pdf>
+Package pdftex.def Info: figures/ADD-L-example1.pdf  used on input line 48.
+(pdftex.def)             Requested size: 167.57533pt x 118.4815pt.
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 7
+4.
+(d:/texlive/2024/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+)
+Overfull \hbox (45.90004pt too wide) detected at line 100
+[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 v\OT1/cmr/m/n/10 ) = []
+ []
+
+[3 <./figures/ADD-L-example1.pdf>])
+(./Sections/4-PSE An precise entropy solver.tex
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 2
+5.
+
+(d:/texlive/2024/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+
+Package natbib Warning: Citation `thurley2006sharpsat' on page 4 undefined on i
+nput line 62.
+
+
+Package natbib Warning: Citation `korhonen2021integrating' on page 4 undefined 
+on input line 84.
+
+
+Package natbib Warning: Citation `sharma2019ganak' on page 4 undefined on input
+ line 84.
+
+
+Package natbib Warning: Citation `lai2021power' on page 4 undefined on input li
+ne 84.
+
+
+Package natbib Warning: Citation `lagniez2017improved' on page 4 undefined on i
+nput line 84.
+
+
+Package natbib Warning: Citation `darwiche2004new' on page 4 undefined on input
+ line 86.
+
+
+Package natbib Warning: Citation `lai2017new' on page 4 undefined on input line
+ 86.
+
+
+Package natbib Warning: Citation `choi2013compiling' on page 4 undefined on inp
+ut line 86.
+
+[4]
+
+pdfTeX warning: pdflatex.exe (file ./figures/ADD-L-example2.pdf): PDF inclusion
+: found PDF version <1.7>, but at most version <1.5> allowed
+<figures/ADD-L-example2.pdf, id=60, 844.95674pt x 597.432pt>
+File: figures/ADD-L-example2.pdf Graphic file (type pdf)
+<use figures/ADD-L-example2.pdf>
+Package pdftex.def Info: figures/ADD-L-example2.pdf  used on input line 97.
+(pdftex.def)             Requested size: 167.57533pt x 118.4815pt.
+
+Package natbib Warning: Citation `sang2005heuristics' on page 5 undefined on in
+put line 112.
+
+
+Package natbib Warning: Citation `darwiche2009modeling' on page 5 undefined on 
+input line 112.
+
+
+Package natbib Warning: Citation `korhonen2021integrating' on page 5 undefined 
+on input line 112.
+
+
+Package natbib Warning: Citation `lai2021power' on page 5 undefined on input li
+ne 112.
+
+
+Package natbib Warning: Citation `lai2021power' on page 5 undefined on input li
+ne 120.
+
+Excluding 'comment' comment.) (./Sections/5-Experiments.tex
+
+Package natbib Warning: Citation `fremont2017maximum' on page 5 undefined on in
+put line 5.
+
+
+Package natbib Warning: Citation `soos2020tinted' on page 5 undefined on input 
+line 5.
+
+
+Package natbib Warning: Citation `sharma2019ganak' on page 5 undefined on input
+ line 5.
+
+
+Package natbib Warning: Citation `golia2022scalable' on page 5 undefined on inp
+ut line 5.
+
+
+Underfull \hbox (badness 1264) in paragraph at lines 14--15
+\OT1/ptm/m/n/10 pare to the state-of-the-art pre-cise Shan-non en-tropy
+ []
+
+
+Package natbib Warning: Citation `golia2022scalable' on page 5 undefined on inp
+ut line 55.
+
+[5 <./figures/ADD-L-example2.pdf>] Excluding 'comment' comment.
+
+Package natbib Warning: Citation `golia2022scalable' on page 6 undefined on inp
+ut line 96.
+
+
+Overfull \hbox (59.3833pt too wide) in paragraph at lines 101--112
+ [][] 
+ []
+
+<figures/PSEvsEntropyEstimation.pdf, id=88, 607.35054pt x 380.80295pt>
+File: figures/PSEvsEntropyEstimation.pdf Graphic file (type pdf)
+<use figures/PSEvsEntropyEstimation.pdf>
+Package pdftex.def Info: figures/PSEvsEntropyEstimation.pdf  used on input line
+ 118.
+(pdftex.def)             Requested size: 341.42996pt x 227.62357pt.
+
+Overfull \hbox (102.03558pt too wide) in paragraph at lines 118--120
+ [][] 
+ []
+
+[6 <./figures/PSEvsEntropyEstimation.pdf>]
+
+Package natbib Warning: Citation `lai2017new' on page 7 undefined on input line
+ 160.
+
+<figures/Configuration_compare.pdf, id=100, 607.35054pt x 380.80295pt>
+File: figures/Configuration_compare.pdf Graphic file (type pdf)
+<use figures/Configuration_compare.pdf>
+Package pdftex.def Info: figures/Configuration_compare.pdf  used on input line 
+168.
+(pdftex.def)             Requested size: 341.42996pt x 227.62357pt.
+
+Overfull \hbox (102.03558pt too wide) in paragraph at lines 168--169
+ [][] 
+ []
+
+Excluding 'comment' comment.) (./Sections/6-Related work.tex
+
+Package natbib Warning: Citation `zhou2018static' on page 7 undefined on input 
+line 8.
+
+
+Package natbib Warning: Citation `golia2022scalable' on page 7 undefined on inp
+ut line 13.
+
+
+Package natbib Warning: Citation `aydin2018parameterized' on page 7 undefined o
+n input line 19.
+
+
+Package natbib Warning: Citation `luu2014model' on page 7 undefined on input li
+ne 20.
+
+
+Package natbib Warning: Citation `aydin2015automata' on page 7 undefined on inp
+ut line 20.
+
+
+Package natbib Warning: Citation `phan2014abstract' on page 7 undefined on inpu
+t line 22.
+
+
+Package natbib Warning: Citation `golia2022scalable' on page 7 undefined on inp
+ut line 24.
+
+
+Package natbib Warning: Citation `bacchus2003dpll' on page 7 undefined on input
+ line 35.
+
+
+Package natbib Warning: Citation `sang2004combining' on page 7 undefined on inp
+ut line 37.
+
+
+Package natbib Warning: Citation `moskewicz2001chaff' on page 7 undefined on in
+put line 37.
+
+
+Package natbib Warning: Citation `thurley2006sharpsat' on page 7 undefined on i
+nput line 39.
+
+
+Package natbib Warning: Citation `sharma2019ganak' on page 7 undefined on input
+ line 42.
+
+
+Package natbib Warning: Citation `darwiche2009modeling' on page 7 undefined on 
+input line 45.
+
+
+Package natbib Warning: Citation `sang2005heuristics' on page 7 undefined on in
+put line 45.
+
+
+Package natbib Warning: Citation `lai2021power' on page 7 undefined on input li
+ne 45.
+
+
+Package natbib Warning: Citation `korhonen2021integrating' on page 7 undefined 
+on input line 45.
+
+
+Package natbib Warning: Citation `lagniez2017preprocessing' on page 7 undefined
+ on input line 47.
+
+[7 <./figures/Configuration_compare.pdf>]
+
+Package natbib Warning: Citation `darwiche2004new' on page 8 undefined on input
+ line 53.
+
+
+Package natbib Warning: Citation `thurley2006sharpsat' on page 8 undefined on i
+nput line 55.
+
+
+Package natbib Warning: Citation `muise2012d' on page 8 undefined on input line
+ 55.
+
+
+Package natbib Warning: Citation `lagniez2017improved' on page 8 undefined on i
+nput line 57.
+
+
+Package natbib Warning: Citation `lai2021power' on page 8 undefined on input li
+ne 60.
+
+
+Underfull \vbox (badness 1430) has occurred while \output is active []
+
+
+Excluding 'comment' comment.
+
+Package natbib Warning: Citation `dal2021compositional' on page 8 undefined on 
+input line 73.
+
+
+Package natbib Warning: Citation `chavira2006compiling' on page 8 undefined on 
+input line 74.
+
+
+Package natbib Warning: Citation `jaeger2004probabilistic' on page 8 undefined 
+on input line 75.
+
+
+Package natbib Warning: Citation `kisa2014probabilistic' on page 8 undefined on
+ input line 76.
+
+
+Package natbib Warning: Citation `mateescu2008and' on page 8 undefined on input
+ line 78.
+
+
+Package natbib Warning: Citation `sanner2005affine' on page 8 undefined on inpu
+t line 79.
+
+
+Package natbib Warning: Citation `macii1996exact' on page 8 undefined on input 
+line 80.
+
+
+Package natbib Warning: Citation `stankoviccomputing' on page 8 undefined on in
+put line 84.
+
+
+Package natbib Warning: Citation `stankovic2007calculating' on page 8 undefined
+ on input line 85.
+
+Excluding 'comment' comment. Excluding 'comment' comment.)
+(./Sections/7-Conclusions.tex) [8] (./main.bbl
+
+Package natbib Warning: Empty `thebibliography' environment on input line 4.
+
+)
+
+Package natbib Warning: There were undefined citations.
+
+[9
+
+] (./main.aux)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-02-20>
+ ***********
+ ) 
+Here is how much of TeX's memory you used:
+ 7053 strings out of 474115
+ 115293 string characters out of 5747697
+ 1955190 words of memory out of 5000000
+ 29306 multiletter control sequences out of 15000+600000
+ 582568 words of font info for 81 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 57i,15n,65p,627b,451s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><d:/tex
+live/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><d:/texlive/2024
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><d:/texlive/2024/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi7.pfb><d:/texlive/2024/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmmi9.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr10.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr5.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
+><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/texl
+ive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><d:/texlive/2024/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><d:/texlive/2024/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmti10.pfb><d:/texlive/2024/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmti7.pfb><d:/texlive/2024/texmf-dist/fonts/type1/urw/cou
+rier/ucrr8a.pfb><d:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><d
+:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><d:/texlive/2024/tex
+mf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (9 pages, 318125 bytes).
+PDF statistics:
+ 196 PDF objects out of 1000 (max. 8388607)
+ 115 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+
