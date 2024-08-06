@@ -8,19 +8,19 @@ Roughly speaking, a program in QIF can be seen as a function from a set of secre
 Boolean clausal constraints are a basic representation to model programs~\cite{fremont2017maximum, golia2022scalable}. 
 In this paper, we focus on precisely computing the Shannon entropy of a program expressed in Boolean clausal constraints.
 
-Let $\varphi(X,Y)$ be the Boolean formula modeling the relationship between the input variable set $X$ and the output variable set $Y$ in the given program.
-We require that for any assignment of $X$, there is at most one assignment of $Y$ that satisfies the formula  $\varphi(X,Y)$.
+
+Let $\varphi(X,Y)$ be a Boolean formula that models the relationship between the input variable set $X$ and the output variable set $Y$ in a given program, such that for any assignment of $X$, at most one assignment of $Y$ satisfies the formula $\varphi(X,Y)$".
 Let $p$ represent a probability distribution defined over the set $\{0,1\}^Y$.
 For each assignment $\sigma$ to $Y$, i.e., $\sigma:Y \mapsto \sigma$, the probability is defined as $p_{\sigma} = \frac{\left| \mathit{Sol}(\varphi(Y \mapsto \sigma)) \right|}{ \left| \mathit{Sol}(\varphi)_{\downarrow X} \right| }$, where $\mathit{Sol}(\varphi(Y \mapsto \sigma))$ denotes the set of solutions of $\varphi(Y \mapsto \sigma)$ and $\mathit{Sol}(\varphi)_{\downarrow X}$ denotes the set of solutions of $\varphi$ projected to $X$.
 The Shannon entropy of $\varphi$ is $H(\varphi) = \sum_{\sigma \in 2^Y} -p_{\sigma} \log p_{\sigma} $.
 Then we can immediately obtain a measure of leaked information with the computed entropy and the assumption that $X$ follows a uniform distribution~\footnote{If $X$ does not follow a uniform distribution, techniques exist
-for reducing the analysis to a uniform case~\cite{backes2011non}.}~\cite{klebanov2013sat}. 
+	for reducing the analysis to a uniform case~\cite{backes2011non}.}~\cite{klebanov2013sat}. 
 
 The workflow of the current precise methods of computing entropy can often be divided into two stages. 
 In the first stage, we enumerate possible outputs, i.e., the satisfying assignments over $Y$, while in the second stage, we compute the probability of the current output based on the number of inputs mapped to the output~\cite{golia2022scalable}.
 The computation in the second stage often invokes model counting (\#SAT), which refers to computing the number of solutions $\mathit{Sol}(\varphi)$ for a given set of clausal constraints $\varphi$. 
 Due to the exponential possible outputs, the current precise methods are often difficult to scale to programs with a large size of $Y$.
-While this paper focuses on improving the precise computation of entropy, we remark that Priyanka et al.~\cite{golia2022scalable} proposed the first Shannon entropy estimation tool, EntropyEstimation, that guarantees that the estimate lies within $(1 \pm \epsilon)$-factor of $H(\varphi)$ with confidence at least $1-\delta$.
+While this paper focuses on improving the precise computation of entropy, we remark that Golia et al.~\cite{golia2022scalable} proposed the first Shannon entropy estimation tool, EntropyEstimation, that guarantees that the estimate lies within $(1 \pm \epsilon)$-factor of $H(\varphi)$ with confidence at least $1-\delta$.
 EntropyEstimation uses uniform sampling to avoid generating all outputs, and indeed scales much better than the precise methods. 
 
 As we mentioned previously, the current methods for precise Shannon entropy computing are difficult to scale to clausal constraints with a large set of outputs.
