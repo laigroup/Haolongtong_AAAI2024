@@ -16,13 +16,13 @@ The Shannon entropy of $\varphi$ is $H(\varphi) = \sum_{\sigma \in 2^Y} -p_{\sig
 Then we can immediately obtain a measure of leaked information with the computed entropy and the assumption that $X$ follows a uniform distribution~\footnote{If $X$ does not follow a uniform distribution, techniques exist for reducing the analysis to a uniform case~\cite{backes2011non}.}~\cite{klebanov2013sat}. 
 
 The workflow of the current precise methods of computing entropy can often be divided into two stages. 
-In the first stage, we enumerate possible outputs, i.e., the satisfying assignments over $Y$. 
-In the second stage, we calculate the probability of each output based on the count of inputs that map to that output~\cite{golia2022scalable}.
+In the first stage, we enumerate possible outputs, i.e., the satisfying assignments over $Y$, while in the second stage, we compute the probability of the current output based on the number of inputs mapped to the output~\cite{golia2022scalable}.
 The computation in the second stage often invokes model counting (\#SAT), which refers to computing the number of solutions $\mathit{Sol}(\varphi)$ for a given set of clausal constraints $\varphi$. 
-Due to the exponential possible outputs, current precise methods often struggle to scale for programs with a large size of $Y$.
+Due to the exponential possible outputs, the current precise methods are often difficult to scale to programs with a large size of $Y$.
 Therefore, more researchers are focusing on approximate estimation of Shannon entropy.
 We remark that Golia et al.~\cite{golia2022scalable} proposed the first Shannon entropy estimation tool, EntropyEstimation, which guarantees that the estimate lies within $(1 \pm \epsilon)$-factor of $H(\varphi)$ with confidence at least $1-\delta$.
 EntropyEstimation employs uniform sampling to avoid generating all outputs, and indeed scales much better than the precise methods. 
+
 
 As previously discussed, current methods for precisely computing Shannon entropy struggle to scale with clausal constraints involving large sets of outputs.
 Theoretically, this requires performing up to $2^{|Y|}$ model counting queries.

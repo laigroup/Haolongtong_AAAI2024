@@ -78,7 +78,8 @@ Finally, we compute the information for $\varphi$ (corresponding to the non-term
 
 \subsection{Implementation}
 
-We now discuss the implementation details that are crucial for the runtime efficiency of PSE. In particular, we adopt many techniques in the state-of-the-art model counters due to the close relationship between entropy computation and model counting.
+We now discuss the implementation details that are crucial for the runtime efficiency of PSE. 
+Specifically, leveraging the tight interplay between entropy computation and model counting, our methodology integrates a variety of state-of-the-art techniques in model counting.
 
 First, we can use different methods for the model counting query \texttt{CountModels} in line 7.
 The first considered method is to individually employ state-of-the-art model counters, such as SharpSAT-TD \cite{korhonen2021integrating}, Ganak~\cite{sharma2019ganak}, ExactMC~\cite{lai2021power}, and D4~\cite{lagniez2017improved}.
