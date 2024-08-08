@@ -1,11 +1,11 @@
 \section{PSE: Scalable Precise Entropy Computation}
 \label{sec:PSE}
 
-In this section, we present our tool, PSE, which computes the Shannon entropy of a given circuit CNF formula over its outputs.
+In this section, we introduce our computational tool, PSE, designed to calculate the Shannon entropy of a specified circuit CNF formula with respect to its output variables.
 %Just like other Shannon entropy tools, the computing process of PSE is divided into two stages: $Y$-stage (corresponding to outputs) and $X$-stage (corresponding to inputs).
 Similar to other Shannon entropy tools, the main process of PSE is divided into two stages: the $Y$-stage (corresponding to outputs) and the $X$-stage (corresponding to inputs).
-During the $Y$-stage, we conduct a search pertaining to ADD-L in order to compute the Shannon entropy precisely.
-For the $X$-stage, we perform multiple optimized model counting.
+In the $Y$-stage, we execute a targeted search within the ADD-L framework to accurately compute the Shannon entropy.
+In the $X$-stage, we perform multiple optimized model counting.
 PSE, depicted in Algorithm \ref{PSE}, takes in a CNF formula $\varphi$, an input set $X$, and an output set $Y$, and returns the self-information $\mathit{infor}(\sigma, \varphi)$ of the formula, where $\sigma$ is the assignment made in the ancestor calls.
 As mentioned in Proposition \ref{prop:Entropy-proposition}, the entropy of the original formula is the output of the root call.
 
