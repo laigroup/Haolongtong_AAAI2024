@@ -55,23 +55,23 @@ As mentioned in Proposition \ref{prop:Entropy-proposition}, the entropy of the o
 \end{algorithm}
 
 We first deal with the cases in which $\varphi$ is $\mathit{false}$ in line 1.  
-When the formula $\varphi$ is $\mathit{false}$, its self-information with respect to the assignment made in the ancestor calls is 0.
+In such instances where the formula $\varphi$ evaluates to $\mathit{false}$, the self-information associated with the assignment from the ancestor calls is defined as 0.
 %When the formula $\varphi$ is $\mathit{true}$, we use a simplification technique where for the remaining unassigned variables $Y$, there are a total of $2^Y$ satisfying assignments.  Therefore, we have $2^{|Y|}$ terminal nodes with a weight of $2^{|\varphi|-|Y|}$ each.
 In line 2, we record the number of variables in $\varphi$. 
-Then, in line 3, we utilize the \texttt{GetImpliedLiterals} function to extract the implied literals of $\varphi$.
+Subsequently, in line 3, we utilize the \texttt{GetImpliedLiterals} function to extract the implied literals of $\varphi$.
 The implementation of \texttt{GetImpliedLiterals} relies on implicit Boolean Constraint Propagation (i-BCP)~\cite{thurley2006sharpsat}. 
-In line 4, we simplify $\varphi$ and $Y$ based on the extracted implied literals $L$.
+In line 4, we simplify both the formula $\varphi$ and the set $Y$ utilizing the extracted implied literals $L$.
 Detect whether the simplified formula $\varphi$ has been stored  in the cache in line 5, and return its $\mathit{infor}$ if $\varphi$ hits the cache.
 If the current $Y$ is an empty set (in line 6), it means that a satisfiable assignment under the restriction of the output set $Y$ has been obtained. 
-We did not directly handle the case where $\varphi$ is  $\mathit{true}$, because in such a scenario, $Y$ is inevitably an empty set, which is a prominent characteristic of the circuit formula. 
-Therefore, the case where $Y$ is an empty set already encompasses the scenario where $\varphi$ is $\mathit{true}$.
+We do not explicitly address the case where $\varphi$ evaluates to $\mathit{true}$, as this naturally results in set $Y$ being empty—a defining trait of circuit formulas.
+Consequently, the scenario where set $Y$ is empty inherently includes the case where $\varphi$ is $\mathit{true}$.
 Lines 7--9 query model counting for the residual formula and calculate its $\mathit{infor}$, corresponding to the terminal case of proposition \ref{prop:Entropy-proposition}.
 $TotalCount$ represents the total number of models for the original formula, i.e., for the original formula $\varphi$, $TotalCount= |\mathit{Sol}(\varphi)|$. 
-This calculation is obtained directly through the invocation of any model counter before PSE.
-In line 9, the $\mathit{infor}$ is stored in the cache and returned as the result.
+This value is obtained directly through the invocation of any model counter before PSE.
+In line 9, the computed self-information $\mathit{infor}$ is cached and then returned as the final result.
 If any remaining variables in $Y$ have not been assigned values, we make decisions about them in line 10.
-\texttt{PickGoodVar} is a heuristic algorithm that heuristically selects a variable from $Y$ (the selection method depends on the heuristic used).
-Next, in lines 11--12, we separately obtain the residual formulas $\varphi_0$ and $\varphi_1$ for the variable $y$ being $\mathit{false}$ and $\mathit{true}$, respectively, and recursively calculate their $\mathit{infor}$ in lines 13--14.
+The \texttt{PickGoodVar} function operates as a heuristic algorithm designed to select a variable from set $Y$, with the selection criteria being determined by the specific heuristic employed.
+Moving forward, lines 11 and 12 are dedicated to generating the residual formulas $\varphi_0$ and $\varphi_1$, which correspond to the scenarios where the variable $y$ is assigned the values $\mathit{false}$ and $\mathit{true}$, respectively. Following this, lines 13 and 14 are utilized to recursively determine the self-information $\mathit{infor}$ for each of these derived formulas.
 Since $\varphi$ is a circuit formula, all residual formulas in the recursive process after the variables in decision $Y$ are also circuit formulas.
 Finally, we compute the information for $\varphi$ (corresponding to the non-terminal case of proposition \ref{prop:Entropy-proposition}) and store it in the cache, returning it as the result in line 15.
 
