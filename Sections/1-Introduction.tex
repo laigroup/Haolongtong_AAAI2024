@@ -16,7 +16,7 @@ The Shannon entropy of $\varphi$ is $H(\varphi) = \sum_{\sigma \in 2^Y} -p_{\sig
 Then we can immediately obtain a measure of leaked information with the computed entropy and the assumption that $X$ follows a uniform distribution~\footnote{If $X$ does not follow a uniform distribution, techniques exist
 	for reducing the analysis to a uniform case~\cite{backes2011non}.}~\cite{klebanov2013sat}. 
 
-The workflow of the current precise methods of computing entropy can often be divided into two stages. 
+The workflow of the current precise methods of computing \include{main}entropy can often be divided into two stages. 
 In the first stage, we enumerate possible outputs, i.e., the satisfying assignments over $Y$. 
 In the second stage, we calculate the probability of each output based on the count of inputs that map to that output~\cite{golia2022scalable}.
 The computation in the second stage often invokes model counting (\#SAT), which refers to computing the number of solutions $\mathit{Sol}(\varphi)$ for a given set of clausal constraints $\varphi$. 
@@ -25,18 +25,17 @@ Therefore, more researchers are focusing on approximate estimation of Shannon en
 We remark that Golia et al.~\cite{golia2022scalable} proposed the first Shannon entropy estimation tool, EntropyEstimation, which guarantees that the estimate lies within $(1 \pm \epsilon)$-factor of $H(\varphi)$ with confidence at least $1-\delta$.
 EntropyEstimation employs uniform sampling to avoid generating all outputs, and indeed scales much better than the precise methods. 
 
-As we mentioned previously, current methods for precise Shannon entropy computing are difficult to scale to clausal constraints with a large set of outputs.
+As previously discussed, current methods for precisely computing Shannon entropy struggle to scale with clausal constraints involving large sets of outputs.
 Theoretically, this requires performing up to $2^{|Y|}$ model counting queries.
 The primary contribution of this paper is to enhance the scalability of precise Shannon entropy computation by improving both stages of the computation process.
 For the first stage, we design a knowledge compilation language to guide the search to avoid exhausting the possible outputs. 
 This language integrates Algebraic Decision Diagrams (ADD), an influential representation, and implied literals, an important notion in Boolean satisfiability solving.
-For the second stage, we do not individually perform model counting queries.
-Instead, we share the component caching with the successive model counting queries.
+For the second stage, instead of performing model counting queries individually, we leverage shared component caching across successive queries.
 Moreover, we take advantage of literal equivalence to pre-process the clausal constraints corresponding to a given program.
 Integrating all the techniques mentioned above, we propose a Precise Shannon Entropy tool PSE.
-We conducted an extensive experimental evaluation over a comprehensive set of benchmarks (361 in total) and compared PSE with the existing precise Shannon entropy computing methods and the current state-of-the-art Shannon entropy estimation tool, EntropyEstimation.
-Our experiments show that the existing precise Shannon entropy algorithm solves only 17 instances, while PSE can solve 289 instances, representing a significant improvement of 272 instances.
-EntropyEstimation can solve 264 instances, while PSE can solve 25 more instances, a surprising improvement.
+We conducted an extensive experimental evaluation over a comprehensive set of benchmarks (361 in total) and compared PSE with the existing precise Shannon entropy computing methods and the current state-of-the-art Shannon entropy estimation tool, EntropyEstimation. % to do
+Our experiments indicate that the existing precise Shannon entropy algorithm is capable of solving only 17 instances, whereas PSE can address 289 instances, marking a significant improvement of 272 instances.
+EntropyEstimation is able to solve 264 instances, whereas PSE surpasses this by solving an additional 25 instances, which is a surprising improvement.
 
 The rest of the paper is structured as follows. 
 We present notation and background in Section \ref{sec:Notation}.
