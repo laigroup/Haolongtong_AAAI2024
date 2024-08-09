@@ -4,7 +4,7 @@
 In this section, we introduce our computational tool, PSE, designed to calculate the Shannon entropy of a specified circuit CNF formula with respect to its output variables.
 %Just like other Shannon entropy tools, the computing process of PSE is divided into two stages: $Y$-stage (corresponding to outputs) and $X$-stage (corresponding to inputs).
 Similar to other Shannon entropy tools, the main process of PSE is divided into two stages: the $Y$-stage (corresponding to outputs) and the $X$-stage (corresponding to inputs).
-In the $Y$-stage, we execute a targeted search within the ADD-L framework to accurately compute the Shannon entropy.\include{main}
+In the $Y$-stage, we execute a targeted search within the ADD-L framework to accurately compute the Shannon entropy.
 In the $X$-stage, we perform multiple optimized model counting.
 PSE, depicted in Algorithm \ref{PSE}, takes in a CNF formula $\varphi$, an input set $X$, and an output set $Y$, and returns the self-information $\mathit{infor}(\sigma, \varphi)$ of the formula, where $\sigma$ is the assignment made in the ancestor calls.
 As mentioned in Proposition \ref{prop:Entropy-proposition}, the entropy of the original formula is the output of the root call.
@@ -71,7 +71,8 @@ This value is obtained directly through the invocation of any model counter befo
 In line 9, the computed self-information $\mathit{infor}$ is cached and then returned as the final result.
 If any remaining variables in $Y$ have not been assigned values, we make decisions about them in line 10.
 The \texttt{PickGoodVar} function operates as a heuristic algorithm designed to select a variable from set $Y$, with the selection criteria being determined by the specific heuristic employed.
-Moving forward, lines 11 and 12 are dedicated to generating the residual formulas $\varphi_0$ and $\varphi_1$, which correspond to the scenarios where the variable $y$ is assigned the values $\mathit{false}$ and $\mathit{true}$, respectively. Following this, lines 13 and 14 are utilized to recursively determine the self-information $\mathit{infor}$ for each of these derived formulas.
+Moving forward, lines 11 and 12 are dedicated to generating the residual formulas $\varphi_0$ and $\varphi_1$, which correspond to the scenarios where the variable $y$ is assigned the values $\mathit{false}$ and $\mathit{true}$, respectively. 
+Following this, lines 13 and 14 are utilized to recursively determine the self-information $\mathit{infor}$ for each of these derived formulas.
 Since $\varphi$ is a circuit formula, all residual formulas in the recursive process after the variables in decision $Y$ are also circuit formulas.
 Finally, we compute the information for $\varphi$ (corresponding to the non-terminal case of proposition \ref{prop:Entropy-proposition}) and store it in the cache, returning it as the result in line 15.
 
@@ -87,10 +88,9 @@ The second method, called \textbf{ConditionedCounting}, requires the prior const
 This method is compatible with eligible representation languages such as d-DNNF~\cite{darwiche2004new}, OBDD[$\land$]~\cite{lai2017new}, and SDD~\cite{choi2013compiling}.
 Upon reaching line 7, the algorithm executes conditioned model counting, utilizing the compiled representation of the formula and incorporating the partial assignment derived from the ancestor calls.
 The last method, called \textbf{SharedCounting}, also solves model counting query by invoking the exact model counter.
-Distinct from the first method, \textbf{SharedCounting} does not merely perform model counting in isolation.
-Instead, it leverages a shared component cache within the counter across all model counting queries, a strategy we term \textbf{XCache}.
-To distinguish it from the cache method in the $X$-stage, we refer to the cache method in the $Y$-stage as \textbf{YCache} in the following.
-To differentiate it from the caching approach used in the $X$-stage, the caching method employed in the $Y$-stage is referred to as \textbf{YCache}.
+Unlike the first method, this method does not just query the model counting individually.
+Instead, we share the component cache in the counter for all model counting queries, and we refer to this strategy as \textbf{XCache}.
+To distinguish it from the caching approach used in the $X$-stage, the caching method employed in the $Y$-stage is referred to as \textbf{YCache}.
 Our observations indicate that the \textbf{SharedCounting} method is most effective within the PSE framework.
 
 \begin{figure}[!htbp]
@@ -105,12 +105,10 @@ Our observations indicate that the \textbf{SharedCounting} method is most effect
 According to the definition of entropy, the assignment $\sigma$ is confined to the variables in set $Y$, implying that, in theory, the implied literals should exclusively involve variables that belong to $Y$.
 %However, we observed that if the implied literals are not restricted to only variables in $Y$ and can also include variables in $X$, it can further simplify the formula and optimize the structure of ADD-L.
 However, our observations indicate that the ADD-L structure can achieve further simplification and optimization if it is not constrained to implied literals involving only variables in $Y$, but is allowed to encompass variables in $X$ as well.
-In light of this insight, we implemented enhancements to the computation of implied literals by lifting the constraints, thus permitting the inclusion of variables from set $X$.
+In light of this insight, we implemented enhancements to the computation of implied literals by lifting the constraints, thus permitting the inclusion of variables from set $X$. 
 Furthermore, we discovered that employing this technique augments the search efficiency while maintaining the precision of the entropy computation.
 To demonstrate the validity and efficacy of this approach, we present an illustrative example in Figure \ref{fig:ADDL-example2}.
-%It is easy to see from the comparison between Figure \ref{fig:ADDL-example2} and Figure \ref{fig:ADDL-example1} that this approach optimizes the structure of ADD-L without affecting the entropy result.
 A comparison between Figure \ref{fig:ADDL-example1} and Figure \ref{fig:ADDL-example2} clearly demonstrates that the approach successfully optimizes the ADD-L structure without affecting the accuracy of the computed entropy.
-
 
 \textbf{Variable Decision Heuristic} 
 We implement the current state-of-the-art model counting heuristics for the Shannon entropy computation problem and conduct comparative experiments, encompassing \textbf{VSADS}~\cite{sang2005heuristics}, \textbf{minfill}~\cite{darwiche2009modeling}, the \textbf{SharpSAT-TD} heuristic~\cite{korhonen2021integrating}, and \textbf{DLCP}~\cite{lai2021power}.
@@ -123,8 +121,6 @@ Consequently, we adopt the \textbf{minfill} heuristic as the default for our sub
 Recognizing that model counting lies at the heart of entropy computation, we have enhanced our entropy tool, PSE, by incorporating an advanced preprocessing technique that capitalizes on literal equivalence in model counting. 
 This idea is inspired by the work of Lai et al. \cite{lai2021power} on capturing literal equivalence in knowledge compilation.
 However, due to the specific nature of the entropy computation process, it is not feasible to arbitrarily replace the literals corresponding to variables in the output set with their equivalents.
-%This is because the new formula $\varphi '$ obtained after the equivalent substitution of literals is equivalent to $\varphi$ in model counting, but not necessarily equivalent in entropy (it is not equivalent when the variables corresponding to the substituted literals belong to $Y$).
-%At the beginning, we had a simple idea to restore all equivalent literals after the calculation, in order not to affect the calculation of the entropy and at the same time to reduce the size of the formula.
 This is because the new formula $\varphi'$ obtained after the equivalent substitution of literals is equivalent to $\varphi$ in model counting, but not necessarily equivalent in entropy (it is not equivalent when the variables of substituted literals belong to $Y$).
 In the beginning, we had the simple idea of restoring all equivalent literals after the calculation so as not to affect the calculation of the entropy and, at the same time, reduce the size of the formula.
 We improve this idea by restoring only the literals corresponding to the variables in $Y$, since the assignments that affect the entropy are only in the part of $Y$. 
@@ -134,6 +130,31 @@ This idea of preprocessing is motivated by the fact that, on the one hand, after
 On the other hand (and more importantly), it reduces the treewidth of the tree decomposition, which leads to a more optimal order of variable selection obtained by the tree decomposition heuristic, and can be very effective in improving the efficiency of PSE calculations.
 
 
+
+
+
+\begin{comment}
+	\begin{algorithm}[h]
+		\caption{InforComputing($\Phi$)}
+		\label{InforComputing}
+		\LinesNumbered
+		\KwIn{A CNF formula $\Phi$ }
+		\KwOut{the $infor$ of $\Phi$}
+		\eIf{$count_{opt} = Counting$}{ 
+			$c \leftarrow $ \texttt{Counting}($\Phi$) 
+		}
+		{  
+			$c \leftarrow $ \texttt{Condition}($\Phi$) 
+		}
+		
+		$p \leftarrow \frac{c}{totalcount} $
+		
+		$infor \leftarrow -p \cdot \log {p}$
+		
+		
+		\Return $  infor$
+	\end{algorithm}
+\end{comment}
 
 
 \begin{comment}
