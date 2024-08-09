@@ -4,7 +4,7 @@
 In this section, we introduce our computational tool, PSE, designed to calculate the Shannon entropy of a specified circuit CNF formula with respect to its output variables.
 %Just like other Shannon entropy tools, the computing process of PSE is divided into two stages: $Y$-stage (corresponding to outputs) and $X$-stage (corresponding to inputs).
 Similar to other Shannon entropy tools, the main process of PSE is divided into two stages: the $Y$-stage (corresponding to outputs) and the $X$-stage (corresponding to inputs).
-In the $Y$-stage, we execute a targeted search within the ADD-L framework to accurately compute the Shannon entropy.
+In the $Y$-stage, we execute a targeted search within the ADD-L framework to accurately compute the Shannon entropy.\include{main}
 In the $X$-stage, we perform multiple optimized model counting.
 PSE, depicted in Algorithm \ref{PSE}, takes in a CNF formula $\varphi$, an input set $X$, and an output set $Y$, and returns the self-information $\mathit{infor}(\sigma, \varphi)$ of the formula, where $\sigma$ is the assignment made in the ancestor calls.
 As mentioned in Proposition \ref{prop:Entropy-proposition}, the entropy of the original formula is the output of the root call.
@@ -81,16 +81,17 @@ Finally, we compute the information for $\varphi$ (corresponding to the non-term
 We now discuss the implementation details that are crucial for the runtime efficiency of PSE. 
 Specifically, leveraging the tight interplay between entropy computation and model counting, our methodology integrates a variety of state-of-the-art techniques in model counting.
 
-First, we can use different methods for the model counting query \texttt{CountModels} in line 7.
+Initially, we have the option to employ various methodologies for the model counting query denoted by \texttt{CountModels} at line 7.
 The first considered method is to individually employ state-of-the-art model counters, such as SharpSAT-TD \cite{korhonen2021integrating}, Ganak~\cite{sharma2019ganak}, ExactMC~\cite{lai2021power}, and D4~\cite{lagniez2017improved}.
 The second method, called \textbf{ConditionedCounting}, requires the prior construction of a representation of the original formula $\varphi$ to support tractable model counting.
-Eligible languages include d-DNNF~\cite{darwiche2004new}, OBDD[$\land$]~\cite{lai2017new}, and SDD~\cite{choi2013compiling}.
-When we reach line 7, we perform conditioned model counting with the compiled representation and the partial assignment made in the ancestor calls. 
+This method is compatible with eligible representation languages such as d-DNNF~\cite{darwiche2004new}, OBDD[$\land$]~\cite{lai2017new}, and SDD~\cite{choi2013compiling}.
+Upon reaching line 7, the algorithm executes conditioned model counting, utilizing the compiled representation of the formula and incorporating the partial assignment derived from the ancestor calls.
 The last method, called \textbf{SharedCounting}, also solves model counting query by invoking the exact model counter.
-Unlike the first method, this method does not just query the model counting individually.
-Instead, we share the component cache in the counter for all model counting queries, and we refer to this strategy as \textbf{XCache}.
+Distinct from the first method, \textbf{SharedCounting} does not merely perform model counting in isolation.
+Instead, it leverages a shared component cache within the counter across all model counting queries, a strategy we term \textbf{XCache}.
 To distinguish it from the cache method in the $X$-stage, we refer to the cache method in the $Y$-stage as \textbf{YCache} in the following.
-We observed that the last method works best in PSE.
+To differentiate it from the caching approach used in the $X$-stage, the caching method employed in the $Y$-stage is referred to as \textbf{YCache}.
+Our observations indicate that the \textbf{SharedCounting} method is most effective within the PSE framework.
 
 \begin{figure}[!htbp]
 	
