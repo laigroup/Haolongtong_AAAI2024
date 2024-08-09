@@ -121,16 +121,17 @@ Consequently, we adopt the \textbf{minfill} heuristic as the default for our sub
 Recognizing that model counting lies at the heart of entropy computation, we have enhanced our entropy tool, PSE, by incorporating an advanced preprocessing technique that capitalizes on literal equivalence in model counting. 
 This idea is inspired by the work of Lai et al. \cite{lai2021power} on capturing literal equivalence in knowledge compilation.
 However, due to the specific nature of the entropy computation process, it is not feasible to arbitrarily replace the literals corresponding to variables in the output set with their equivalents.
-This is because the new formula $\varphi'$ obtained after the equivalent substitution of literals is equivalent to $\varphi$ in model counting, but not necessarily equivalent in entropy (it is not equivalent when the variables of substituted literals belong to $Y$).
-In the beginning, we had the simple idea of restoring all equivalent literals after the calculation so as not to affect the calculation of the entropy and, at the same time, reduce the size of the formula.
-We improve this idea by restoring only the literals corresponding to the variables in $Y$, since the assignments that affect the entropy are only in the part of $Y$. 
+The reason for this lies in the fact that the new formula $\varphi'$, obtained through the equivalent substitution of literals, is equivalent to $\varphi$ in model counting.
+However, this equivalence does not necessarily extend to entropy, particularly when the variables of the substituted literals are elements of the set $Y$.
+Initially, we extract equivalent literals aimed at simplifying the formulas, and then restore the equivalent literals to avoid precision errors in entropy calculations.
+We enhance this method by restoring solely the literals associated with variables in set $Y$. 
+This targeted restoration is sufficient to ensure the equivalence of entropy calculations.
 The new preprocessing method is called \textbf{Pre} in the following.
 Experiments have demonstrated that this preprocessing method provides some performance enhancement to the tool (See Section \ref{sec:Experiments}).
-This idea of preprocessing is motivated by the fact that, on the one hand, after preprocessing using literal equivalence, it can simplify the formula and thereby improve the efficiency of the subsequent model counting.
-On the other hand (and more importantly), it reduces the treewidth of the tree decomposition, which leads to a more optimal order of variable selection obtained by the tree decomposition heuristic, and can be very effective in improving the efficiency of PSE calculations.
-
-
-
+This preprocessing approach is motivated by two primary considerations. 
+Firstly, preprocessing using literal equivalence can simplify the formula, thereby improving the efficiency of subsequent model counting. 
+Secondly, and more importantly, it reduces the treewidth of the tree decomposition. 
+This reduction leads to a more optimal variable selection order, achieved through the tree decomposition heuristic, which significantly enhances the efficiency of PSE calculations.
 
 
 \begin{comment}
