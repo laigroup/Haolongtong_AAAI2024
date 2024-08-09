@@ -109,19 +109,20 @@ In light of this insight, we implemented enhancements to the computation of impl
 Furthermore, we discovered that employing this technique augments the search efficiency while maintaining the precision of the entropy computation.
 To demonstrate the validity and efficacy of this approach, we present an illustrative example in Figure \ref{fig:ADDL-example2}.
 %It is easy to see from the comparison between Figure \ref{fig:ADDL-example2} and Figure \ref{fig:ADDL-example1} that this approach optimizes the structure of ADD-L without affecting the entropy result.
-From the comparison between Figure \ref{fig:ADDL-example1} and \ref{fig:ADDL-example2}, it is easy to see that the approach optimizes the structure of ADD-L without affecting the entropy result.
+A comparison between Figure \ref{fig:ADDL-example1} and Figure \ref{fig:ADDL-example2} clearly demonstrates that the approach successfully optimizes the ADD-L structure without affecting the accuracy of the computed entropy.
+
 
 \textbf{Variable Decision Heuristic} 
-We apply the current state-of-the-art model counting heuristics to the Shannon entropy computing problem and perform experimental comparisons, including \textbf{VSADS}~\cite{sang2005heuristics}, \textbf{minfill}~\cite{darwiche2009modeling}, \textbf{SharpSAT-TD heuristic}~\cite{korhonen2021integrating}, and \textbf{DLCP}~\cite{lai2021power}.
-We experimented with these heuristics, and our experiments show that the \textbf{minfill} heuristic is the one that performs best in the entropy computing problem. 
-We use the \textbf{minfill} heuristic by default in our subsequent experiments.
+We implement the current state-of-the-art model counting heuristics for the Shannon entropy computation problem and conduct comparative experiments, encompassing \textbf{VSADS}~\cite{sang2005heuristics}, \textbf{minfill}~\cite{darwiche2009modeling}, the \textbf{SharpSAT-TD} heuristic~\cite{korhonen2021integrating}, and \textbf{DLCP}~\cite{lai2021power}.
+Through our experimentation with various heuristics, the results consistently indicate that the minfill heuristic achieves superior performance in addressing the entropy computation problem.
+Consequently, we adopt the \textbf{minfill} heuristic as the default for our subsequent experiments.
 
 \textbf{Preprocessing} 
 %Since the core of entropy computing is model counting, we try to integrate the preprocessing strategy in model counting into our entropy tool PSE.
 %Based on Literal Equivalences, which is a powerful technique in SAT solving, we implement a new preprocessing approach in PSE.
-Since model counting is the core of entropy computing, we extend the preprocessing technique based on literal equivalence in model counting and integrate it into our entropy tool, PSE.
+Recognizing that model counting lies at the heart of entropy computation, we have enhanced our entropy tool, PSE, by incorporating an advanced preprocessing technique that capitalizes on literal equivalence in model counting. 
 This idea is inspired by the work of Lai et al. \cite{lai2021power} on capturing literal equivalence in knowledge compilation.
-However, due to the special nature of the entropy computing process, we cannot arbitrarily replace the literals corresponding to variables in the output set with equivalent ones.
+However, due to the specific nature of the entropy computation process, it is not feasible to arbitrarily replace the literals corresponding to variables in the output set with their equivalents.
 %This is because the new formula $\varphi '$ obtained after the equivalent substitution of literals is equivalent to $\varphi$ in model counting, but not necessarily equivalent in entropy (it is not equivalent when the variables corresponding to the substituted literals belong to $Y$).
 %At the beginning, we had a simple idea to restore all equivalent literals after the calculation, in order not to affect the calculation of the entropy and at the same time to reduce the size of the formula.
 This is because the new formula $\varphi'$ obtained after the equivalent substitution of literals is equivalent to $\varphi$ in model counting, but not necessarily equivalent in entropy (it is not equivalent when the variables of substituted literals belong to $Y$).
