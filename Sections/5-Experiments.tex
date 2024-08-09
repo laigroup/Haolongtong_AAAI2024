@@ -4,9 +4,7 @@
 To evaluate the performance of PSE, we implemented a prototype in C++ that employs ExactMC as the model counter.
 We evaluate PSE in 361 benchmarks, including the QIF  benchmarks~\cite{fremont2017maximum}, combinatorial circuits, plan recognition~\cite{soos2020tinted}, bit-blasted versions of SMTLIB benchmarks~\cite{sharma2019ganak}, and QBFEval competitions~\cite{golia2022scalable}. %~\cite{qbfeval2017, qbfeval2018}. 
 All experiments were run on a computer with Intel(R) Core(TM) i9-10920X CPU @ 3.50GHz and 32GB RAM.
-RAM. 
-Each instance was run on a single core with a timeout
-of 3000 seconds and 8GB memory.
+Each instance was run on a single core with a timeout of 3000 seconds and 8GB memory.
 
 
 Through our evaluations and analysis, we sought to answer the following research questions:
@@ -63,34 +61,6 @@ Table \ref{table:1} shows the comparison between baseline and PSE on some instan
 The results show a significant improvement in the efficiency of PSE for computing the precise Shannon entropy, which answers \textbf{RQ1} as well.
 
 
-\begin{comment}
-	\begin{table}[h!]
-		\centering
-		\begin{tabular}{ cccc } 
-			\toprule 
-			domains & $\#$ instances & PSE & EntropyEstimation 
-			\\ 
-			\midrule 
-			BlastedSMT & 217 & \textbf{174} & 160 \\ 
-			
-			Circuit & 91 & \textbf{70} & 64 \\
-			
-			Verification & 27 & \textbf{27} & 14 \\ 
-			
-			QIF & 3 & \textbf{3} & \textbf{3} \\ 
-			
-			QBF & 23 & 15 & \textbf{23} \\ 
-			
-			Toal & 361 & \textbf{290} & 265 \\
-			\bottomrule
-		\end{tabular}
-		\caption{Comparative entropy counting performance between PSE and EntropyEstimation, where each cell below tool refers to the number of solved instances.}
-		\label{table:2}
-	\end{table}
-\end{comment}
-
-
-%\subsection{Comparison with EntropyEstimation}
 \subsection{Comparison with Shannon entropy estimation tool}
 We compare PSE with EntropyEstimation, the current state-of-the-art Shannon entropy estimation tool on 361 instances. 
 Table \ref{table:2} shows the performance of PSE and EntropyEstimation~\cite{golia2022scalable} in entropy computing.
@@ -121,20 +91,17 @@ Table \ref{table:2} shows the performance of PSE and EntropyEstimation~\cite{gol
 	\label{figure:2}
 \end{figure} 
 
-From Table \ref{table:2}, it can be seen that out of a total of 361 instances, under the time limit of 3000 seconds, our tool PSE is able to solve 25 more instances than EntropyEstimation, and the overall performance is better. 
-For all instances where both PSE and EntropyEstimation can be solved, PSE has a shorter computing time, as well as a much smaller average PAR-2 score~\footnote{The average PAR-2 scoring scheme gives a penalized average runtime, assigning a runtime of two times the time limit for each benchmark that the tool fails to solve} than EntropyEstimation.
+Table \ref{table:2} shows that, among the 361 instances tested and within the 3000-second time limit, our tool PSE successfully solves 25 more instances than EntropyEstimation, indicating overall superior performance.
+For instances where both PSE and EntropyEstimation successfully solve the problem within the time limit, PSE demonstrates a shorter computation time and a substantially lower average PAR-2 score~\footnote{The average PAR-2 scoring scheme gives a penalized average runtime, assigning a runtime of two times the time limit for each benchmark that the tool fails to solve} than EntropyEstimation.
 Figure \ref{figure:2} shows the cactus plot of runtime for PSE and EntropyEstimation, where the $x$-axis represents the number of benchmarks and the $y$-axis represents the runtime.
 
-%It can be concluded that PSE is significantly more efficient than EntropyEstimation in computing the same instances that can be solved by both PSE and EntropyEstimation.
-Meanwhile, we also observed that there were some instances that PSE could not solve while EntropyEstimation could.
-We observed in our experiments that in the instances where PSE could not be solved, the number of model counting queries was so high that it had reached an order of magnitude of ten million and still did not solve for entropy.
-We believe this may have reached the bottleneck of precise Shannon entropy computing.
-Therefore, we believe that more powerful techniques are needed to accurately solve the entropy of these instances.
-We analyze that better preprocessing methods and more suitable variable heuristics for entropy computing may become a breakthrough.
-However, we need to emphasize that EntropyEstimation is only a Shannon entropy estimation tool, and the entropy it obtains is subject to a certain degree of error. 
-Our precise Shannon entropy tool PSE performs better than entropy estimators in most instances, which demonstrates that our techniques significantly enhance the scalability of precise Shannon entropy.
-%From the results, we can more intuitively observe that in the majority of instances, the performance of PSE is significantly better than EntropyEstimation which provides an affirmative answer to \textbf{RQ2}.
-Based on the results, it is evident that PSE outperforms EntropyEstimation in the majority of instances. This provides a positive answer to \textbf{RQ2}.
+Meanwhile, we identified some instances where PSE timed out while EntropyEstimation was able to solve within the time limit.
+Our experiments showed that, in cases where PSE was unable to solve the problem, the number of model counting queries escalated to an order of magnitude of ten million, and the entropy was still not computed.
+This suggests a potential bottleneck in the computation of precise Shannon entropy. Therefore, more sophisticated techniques are required to accurately compute the entropy for these challenging instances.
+We propose that improvements in preprocessing techniques and more effective variable heuristics for entropy computation could represent key breakthroughs.
+Nonetheless, it is crucial to recognize that EntropyEstimation is an estimation tool for Shannon entropy and that its results are subject to a certain margin of error.
+Our precise Shannon entropy tool, PSE, consistently performs better than entropy estimators across most instances, highlighting that our methods significantly enhance the scalability of precise Shannon entropy computation.
+The results clearly indicate that PSE outperforms EntropyEstimation in the majority of instances. This validates a positive answer to \textbf{RQ2}.
 
 %These experimental results show that PSE has significant advantages over both state-of-the-art precise and approximate entropy tools.
 %This also provides an affirmative answer to \textbf{RQ1}.
