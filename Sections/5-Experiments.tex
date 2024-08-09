@@ -109,7 +109,7 @@ The results clearly indicate that PSE outperforms EntropyEstimation in the major
 
 \subsection{Impact of algorithmic configurations}
 To better verify the effectiveness of the PSE methods and answer \textbf{RQ3}, we conducted a comparative study on all the utilized methods, including methods for the $Y$-stage: \textbf{Implied Literal}, \textbf{YCache}, \textbf{Pre}, variable decision heuristics(\textbf{minfill}, \textbf{DLCP}, \textbf{SharpSAT-TD heuristic}, \textbf{VSADS}), and methods for the $X$-stage: \textbf{XCache} and \textbf{ConditionedCounting}.
-According to the principle of control variables, we designed ablation experiments to verify the effectiveness of each method, and each experiment was only different from the tool PSE in one method.
+In accordance with the principle of control variables, we conducted ablation experiments to evaluate the effectiveness of each method, ensuring that each experiment differed from the PSE tool by only one method.
 The cactus plot for the different methods is shown in Figure \ref{figure:3}, where PSE represents our tool, PSE-wo-Pre means that \textbf{Pre} is turned off in PSE.
 PSE-ConditionedCounting indicates that PSE employed the \textbf{ConditionedCounting} method rather than \textbf{SharedCounting} in the $X$-stage.
 PSE-wo-XCache indicates that the caching method is turned off in PSE in the $X$-stage. 
