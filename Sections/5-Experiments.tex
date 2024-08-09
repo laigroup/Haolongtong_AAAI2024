@@ -118,9 +118,12 @@ PSE-wo-ImpliedLiteral indicates that PSE does not employ the \textbf{Implied Lit
 PSE-dynamic-SharpSAT-TD means that PSE replaces the \textbf{minfill} static variable order with the dynamic variable order: the variable decision-making heuristic method of SharpSAT-TD (all other configurations are the same as in PSE, only the variable decision-making heuristic is different).
 Similarly, PSE-dynamic-DLCP and PSE-dynamic-VSADS respectively indicate the selection of dynamic heuristic \textbf{DLCP} and \textbf{VSADS}.
 
-As can be seen from the experimental results, the power of implied literal is very strong. 
-The effect of caching is also significant, as has been demonstrated in previous studies of knowledge compilation.
-Although the effect of preprocessing is not very significant, it can still increase the number of instances solved.
+%As can be seen from the experimental results, the power of implied literal is very strong. 
+%The effect of caching is also significant, as has been demonstrated in previous studies of knowledge compilation.
+%Although the effect of preprocessing is not very significant, it can still increase the number of instances solved.
+The experimental results highlight the considerable effectiveness of implied literals. 
+Caching also demonstrates significant benefits, consistent with findings from previous studies on knowledge compilation. 
+While the impact of preprocessing is relatively modest, it nonetheless leads to an increase in the number of instances solved.
 The heuristic strategies minfill and SharpSAT-TD heuristic both performed well, and the results indicate that the static heuristic minfill is more suitable for entropy computing.
 In the technique of the $X$-stage, the \textbf{ConditionedCounting} method performs better than \textbf{SharedCounting} without \textbf{XCache}, but not as well as the \textbf{SharedCounting} method.
 This comparative experiment indicates that the shared component caching is quite effective.
@@ -138,24 +141,4 @@ Finally, PSE selects the \textbf{SharedCounting} strategy in the $X$-stage, and 
 \end{figure} 
 
 
-\begin{comment}
-	\subsection{Impact of pre-process}
-	We compare the effects of the preprocessing techniques mentioned in Section 4 on PSE.
-	We use the term "Pre" to refer to the preprocessing in ExactMC. "Pre + Liteq" means preprocessing plus literal equivalence strategy. "Pre + Liteq\_New" refers to preprocessing plus the improved literal equivalence strategy proposed in this paper.
-	Figure \ref{figure:3} shows the cactus plot comparing three different preprocessing strategies, where the x-axis represents the number of solved instances and the y-axis represents the running time.
-	In order to visualise the efficiency gap between different preprocessing methods more intuitively, we removed 250 instances that could be solved by PSE within 1s.
-	From the results, it is clear that the literal equivalence strategy is an enhancement to entropy computing and Liteq\_New performs the best. 
-	Using literal equivalence strategy can reduce the average PAR-2 score from 1287.38 to 1257.83. while Liteq\_New strategy can make the average PAR-2 score reduced to 1193.37.
-	
-	
-	
-	
-	\begin{figure}[htbp]
-		\centering
-		\includegraphics[width=12cm,height=8cm]{figures/Preprocess.pdf}
-		\caption{Cactus plot comparing different preprocessing strategies.
-		}
-		\label{figure:3}
-	\end{figure} 
-\end{comment}
 
