@@ -102,11 +102,12 @@ Our observations indicate that the \textbf{SharedCounting} method is most effect
 \end{figure} 
 
 \textbf{Implied Literal}
-From the definition of entropy, the assignment $\sigma$ is restricted to $Y$, so the implied literals theoretically only contain variables from $Y$.
+According to the definition of entropy, the assignment $\sigma$ is confined to the variables in set $Y$, implying that, in theory, the implied literals should exclusively involve variables that belong to $Y$.
 %However, we observed that if the implied literals are not restricted to only variables in $Y$ and can also include variables in $X$, it can further simplify the formula and optimize the structure of ADD-L.
-However, we observed that the structure of ADD-L can be further simplified and optimized if the implied literals are not limited to variables in $Y$ but can also include variables in $X$.
-Based on this observation, we made some improvements to the computation of implied literals, removing restrictions on implied literals to allow them to include variables in $X$. Additionally, we found that this technique can enhance the efficiency of the search without compromising the accuracy of entropy computation.
-We use an example to illustrate the correctness and effectiveness of this idea, as shown in Figure \ref{fig:ADDL-example2}.
+However, our observations indicate that the ADD-L structure can achieve further simplification and optimization if it is not constrained to implied literals involving only variables in $Y$, but is allowed to encompass variables in $X$ as well.
+In light of this insight, we implemented enhancements to the computation of implied literals by lifting the constraints, thus permitting the inclusion of variables from set $X$.
+Furthermore, we discovered that employing this technique augments the search efficiency while maintaining the precision of the entropy computation.
+To demonstrate the validity and efficacy of this approach, we present an illustrative example in Figure \ref{fig:ADDL-example2}.
 %It is easy to see from the comparison between Figure \ref{fig:ADDL-example2} and Figure \ref{fig:ADDL-example1} that this approach optimizes the structure of ADD-L without affecting the entropy result.
 From the comparison between Figure \ref{fig:ADDL-example1} and \ref{fig:ADDL-example2}, it is easy to see that the approach optimizes the structure of ADD-L without affecting the entropy result.
 
